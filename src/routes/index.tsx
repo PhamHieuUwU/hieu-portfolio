@@ -231,7 +231,7 @@ function About() {
           <div className="p-6 rounded-3xl border border-border space-y-5">
             <Info icon={GraduationCap} label="Education" value="B.Sc. Information Technology · Lac Hong University · GPA 7.88/10" />
             <Info icon={Trophy} label="Achievement" value="VECOM Digital Business 2024 — Ranked 24th · Merit Scholarship 2024" />
-            <Info icon={Languages} label="Languages" value="Vietnamese (Native) · English (IELTS 2024)" />
+            <Info icon={Languages} label="Languages" value="Vietnamese (Native) · English (working proficiency)" />
           </div>
         </div>
       </div>
