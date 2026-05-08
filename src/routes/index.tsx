@@ -36,7 +36,7 @@ const TOOLS = ["Canva", "CapCut", "PowerPoint", "TikTok", "Facebook", "Instagram
 
 const EXPERIENCE = [
   {
-    role: "Club President / Content & Operations Lead",
+    role: "Middle-level Management — Content & Operations Lead",
     org: "EcomIT Club — Lac Hong University",
     period: "2026 — Present",
     points: [
