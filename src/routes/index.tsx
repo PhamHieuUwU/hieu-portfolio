@@ -447,7 +447,7 @@ function Contact() {
         <div className="relative">
           <div className="text-xs font-mono uppercase tracking-[0.2em] text-accent-green mb-4">07 — Contact</div>
           <h2 className="text-4xl md:text-6xl font-bold mb-6 max-w-2xl">
-            Let's build something <span className="text-gradient">creative</span>.
+            Let's build something <span className="text-gradient">together</span>.
           </h2>
           <p className="text-background/70 text-lg mb-10 max-w-xl">
             Open to internship opportunities in design, social media and digital marketing.
