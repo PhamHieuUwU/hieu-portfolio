@@ -96,10 +96,12 @@ const PROJECTS = [
   },
 ];
 
-const SAMPLES = [
-  { title: "EcomIT Kickoff Poster", type: "Event Visual", gradient: "from-emerald-400 to-teal-500" },
-  { title: "Livestream Recruitment Post", type: "Social Post", gradient: "from-blue-500 to-indigo-600" },
-  { title: "Tea Break / Networking", type: "Event Visual", gradient: "from-lime-400 to-emerald-500" },
+type Sample = { title: string; type: string; gradient?: string; image?: string };
+
+const SAMPLES: Sample[] = [
+  { title: "EcomIT Club Kickoff", type: "Event Poster", image: sampleKickoff },
+  { title: "Workshop with TikToker Dannie Linh Đan", type: "Workshop Recap", image: sampleWorkshop },
+  { title: "EcomIT Member Recruitment", type: "Recruitment Campaign", image: sampleRecruitment },
   { title: "VECOM Pitch Deck", type: "Presentation", gradient: "from-cyan-500 to-blue-600" },
   { title: "Topic Cluster Map", type: "SEO Brief", gradient: "from-emerald-500 to-green-600" },
   { title: "AI Content Workflow", type: "System Diagram", gradient: "from-blue-400 to-cyan-500" },
