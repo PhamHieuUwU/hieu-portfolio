@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroVisual from "@/assets/hero-visual.jpg";
+import heroVisual from "@/assets/profile.jpg";
 import {
   Mail, Phone, MapPin, Linkedin, ArrowUpRight, Sparkles,
   Palette, Megaphone, ShoppingBag, Bot, Trophy, Users,
