@@ -412,7 +412,11 @@ function Samples() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SAMPLES.map((s) => (
             <div key={s.title} className="group relative aspect-[4/5] rounded-2xl overflow-hidden border border-border">
-              <div className={`absolute inset-0 bg-gradient-to-br ${s.gradient}`} />
+              {s.image ? (
+                <img src={s.image} alt={s.title} className="absolute inset-0 w-full h-full object-cover transition-transform group-hover:scale-105" />
+              ) : (
+                <div className={`absolute inset-0 bg-gradient-to-br ${s.gradient}`} />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                 <div className="text-xs uppercase tracking-wider opacity-80 mb-1">{s.type}</div>
