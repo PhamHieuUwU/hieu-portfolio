@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import heroVisual from "@/assets/profile.jpg";
 import sampleTraTraiCay from "@/assets/sample-tra-trai-cay.png";
 import sampleMatcha from "@/assets/sample-matcha.png";
@@ -6,7 +7,7 @@ import sampleTraSua from "@/assets/sample-tra-sua.png";
 import {
   Mail, Phone, MapPin, Linkedin, ArrowUpRight, Sparkles,
   Palette, Megaphone, ShoppingBag, Bot, Trophy, Users,
-  Target, CheckCircle2, GraduationCap, Languages,
+  Target, CheckCircle2, GraduationCap, Languages, X,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -97,9 +98,33 @@ const PROJECTS = [
 ];
 
 const SAMPLES = [
-  { title: "Fruit Tea Campaign Poster", type: "Social Post", image: sampleTraTraiCay },
-  { title: "Umami Matcha Latte Launch", type: "Social Post", image: sampleMatcha },
-  { title: "Tea Day Iced Milk Tea Promo", type: "Social Post", image: sampleTraSua },
+  {
+    title: "Fruit Tea Campaign Poster",
+    type: "Social Post",
+    image: sampleTraTraiCay,
+    goal: "Promote a refreshing fruit tea product line for a young, energetic audience.",
+    did: "Designed key visual, headline typography, ingredient highlights and CTA layout in Canva.",
+    result: "A vibrant poster ready for Facebook & Instagram with a clear hero product and CTA.",
+    tags: ["Canva", "Poster", "F&B"],
+  },
+  {
+    title: "Umami Matcha Latte Launch",
+    type: "Social Post",
+    image: sampleMatcha,
+    goal: "Launch a new Matcha Latte for Umami Tea & Coffee with a clean, premium feel.",
+    did: "Built a soft natural scene, product spotlight, price tag and combo suggestion module.",
+    result: "Launch-ready social post with strong product focus and clear pricing.",
+    tags: ["Canva", "Product Launch", "F&B"],
+  },
+  {
+    title: "Tea Day Iced Milk Tea Promo",
+    type: "Social Post",
+    image: sampleTraSua,
+    goal: "Push a 10% promotion for Tea Day's iced milk tea during summer season.",
+    did: "Created bold typography, splash effects, benefit icons and a strong promo badge.",
+    result: "Eye-catching promo post built to drive walk-ins and online orders.",
+    tags: ["Canva", "Promo", "F&B"],
+  },
 ];
 
 function Portfolio() {
