@@ -157,7 +157,7 @@ const SAMPLES = [
   },
 ];
 
-function Portfolio() {
+export function Portfolio() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />

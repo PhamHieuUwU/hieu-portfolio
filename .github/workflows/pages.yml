@@ -31,7 +31,7 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Build
-        run: bun run build
+        run: bun run build:pages
 
       - name: Prepare static output
         id: output
@@ -39,7 +39,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          for dir in .output/public dist; do
+          for dir in dist .output/public; do
             if [ -f "$dir/index.html" ]; then
               touch "$dir/.nojekyll"
               cp "$dir/index.html" "$dir/404.html"
