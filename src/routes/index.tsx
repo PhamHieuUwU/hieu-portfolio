@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroVisual from "@/assets/profile.jpg";
+import sampleTraTraiCay from "@/assets/sample-tra-trai-cay.png";
+import sampleMatcha from "@/assets/sample-matcha.png";
+import sampleTraSua from "@/assets/sample-tra-sua.png";
 import {
   Mail, Phone, MapPin, Linkedin, ArrowUpRight, Sparkles,
   Palette, Megaphone, ShoppingBag, Bot, Trophy, Users,
@@ -94,12 +97,9 @@ const PROJECTS = [
 ];
 
 const SAMPLES = [
-  { title: "EcomIT Kickoff Poster", type: "Event Visual", gradient: "from-emerald-400 to-teal-500" },
-  { title: "Livestream Recruitment Post", type: "Social Post", gradient: "from-blue-500 to-indigo-600" },
-  { title: "Tea Break / Networking", type: "Event Visual", gradient: "from-lime-400 to-emerald-500" },
-  { title: "VECOM Pitch Deck", type: "Presentation", gradient: "from-cyan-500 to-blue-600" },
-  { title: "Topic Cluster Map", type: "SEO Brief", gradient: "from-emerald-500 to-green-600" },
-  { title: "AI Content Workflow", type: "System Diagram", gradient: "from-blue-400 to-cyan-500" },
+  { title: "Fruit Tea Campaign Poster", type: "Social Post", image: sampleTraTraiCay },
+  { title: "Umami Matcha Latte Launch", type: "Social Post", image: sampleMatcha },
+  { title: "Tea Day Iced Milk Tea Promo", type: "Social Post", image: sampleTraSua },
 ];
 
 function Portfolio() {
@@ -406,10 +406,10 @@ function Samples() {
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SAMPLES.map((s) => (
-            <div key={s.title} className="group relative aspect-[4/5] rounded-2xl overflow-hidden border border-border">
-              <div className={`absolute inset-0 bg-gradient-to-br ${s.gradient}`} />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+            <div key={s.title} className="group relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-muted">
+              <img src={s.image} alt={s.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="text-xs uppercase tracking-wider opacity-80 mb-1">{s.type}</div>
                 <div className="font-display font-semibold text-lg">{s.title}</div>
               </div>
