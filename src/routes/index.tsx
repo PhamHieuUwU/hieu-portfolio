@@ -4,6 +4,9 @@ import heroVisual from "@/assets/profile.jpg";
 import sampleTraTraiCay from "@/assets/sample-tra-trai-cay.png";
 import sampleMatcha from "@/assets/sample-matcha.png";
 import sampleTraSua from "@/assets/sample-tra-sua.png";
+import sampleWorkshop from "@/assets/sample-workshop.png";
+import sampleKickoff from "@/assets/sample-kickoff.png";
+import sampleRecruitment from "@/assets/sample-recruitment.png";
 import {
   Mail, Phone, MapPin, Linkedin, ArrowUpRight, Sparkles,
   Palette, Megaphone, ShoppingBag, Bot, Trophy, Users,
@@ -124,6 +127,33 @@ const SAMPLES = [
     did: "Created bold typography, splash effects, benefit icons and a strong promo badge.",
     result: "Eye-catching promo post built to drive walk-ins and online orders.",
     tags: ["Canva", "Promo", "F&B"],
+  },
+  {
+    title: "EcomIT Recruitment Campaign",
+    type: "Club Campaign",
+    image: sampleRecruitment,
+    goal: "Recruit new members for EcomIT Club across Content, Design, Livestream and Operations.",
+    did: "Designed the key visual, value-props checklist and open-position grid with a clear CTA.",
+    result: "Boosted application reach across student groups and clarified the four open tracks.",
+    tags: ["Recruitment", "Branding", "Club"],
+  },
+  {
+    title: "EcomIT Kickoff Poster",
+    type: "Event Visual",
+    image: sampleKickoff,
+    goal: "Announce the EcomIT Club kickoff event and drive student attendance.",
+    did: "Built the hero composition, time/location info block and event highlight icons.",
+    result: "Strong on-campus turnout for the first official EcomIT meetup.",
+    tags: ["Event", "Poster", "Club"],
+  },
+  {
+    title: "Workshop Recap — Dannie Linh Đan",
+    type: "Workshop Recap",
+    image: sampleWorkshop,
+    goal: "Recap the TikTok content workshop with TikToker Dannie Linh Đan for e-commerce students.",
+    did: "Designed the recap layout: key topics, thank-you note, speaker card and event photos.",
+    result: "Delivered a clean recap post that extended reach and credibility of the workshop.",
+    tags: ["Workshop", "Recap", "Club"],
   },
 ];
 
