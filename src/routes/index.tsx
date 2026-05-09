@@ -4,6 +4,9 @@ import heroVisual from "@/assets/profile.jpg";
 import sampleTraTraiCay from "@/assets/sample-tra-trai-cay.png";
 import sampleMatcha from "@/assets/sample-matcha.png";
 import sampleTraSua from "@/assets/sample-tra-sua.png";
+import sampleWorkshop from "@/assets/sample-workshop.png";
+import sampleKickoff from "@/assets/sample-kickoff.png";
+import sampleRecruitment from "@/assets/sample-recruitment.png";
 import {
   Mail, Phone, MapPin, Linkedin, ArrowUpRight, Sparkles,
   Palette, Megaphone, ShoppingBag, Bot, Trophy, Users,
