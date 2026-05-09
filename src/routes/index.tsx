@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import heroVisual from "@/assets/profile.jpg";
 import sampleTraTraiCay from "@/assets/sample-tra-trai-cay.png";
 import sampleMatcha from "@/assets/sample-matcha.png";
@@ -6,7 +7,7 @@ import sampleTraSua from "@/assets/sample-tra-sua.png";
 import {
   Mail, Phone, MapPin, Linkedin, ArrowUpRight, Sparkles,
   Palette, Megaphone, ShoppingBag, Bot, Trophy, Users,
-  Target, CheckCircle2, GraduationCap, Languages,
+  Target, CheckCircle2, GraduationCap, Languages, X,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -97,9 +98,33 @@ const PROJECTS = [
 ];
 
 const SAMPLES = [
-  { title: "Fruit Tea Campaign Poster", type: "Social Post", image: sampleTraTraiCay },
-  { title: "Umami Matcha Latte Launch", type: "Social Post", image: sampleMatcha },
-  { title: "Tea Day Iced Milk Tea Promo", type: "Social Post", image: sampleTraSua },
+  {
+    title: "Fruit Tea Campaign Poster",
+    type: "Social Post",
+    image: sampleTraTraiCay,
+    goal: "Promote a refreshing fruit tea product line for a young, energetic audience.",
+    did: "Designed key visual, headline typography, ingredient highlights and CTA layout in Canva.",
+    result: "A vibrant poster ready for Facebook & Instagram with a clear hero product and CTA.",
+    tags: ["Canva", "Poster", "F&B"],
+  },
+  {
+    title: "Umami Matcha Latte Launch",
+    type: "Social Post",
+    image: sampleMatcha,
+    goal: "Launch a new Matcha Latte for Umami Tea & Coffee with a clean, premium feel.",
+    did: "Built a soft natural scene, product spotlight, price tag and combo suggestion module.",
+    result: "Launch-ready social post with strong product focus and clear pricing.",
+    tags: ["Canva", "Product Launch", "F&B"],
+  },
+  {
+    title: "Tea Day Iced Milk Tea Promo",
+    type: "Social Post",
+    image: sampleTraSua,
+    goal: "Push a 10% promotion for Tea Day's iced milk tea during summer season.",
+    did: "Created bold typography, splash effects, benefit icons and a strong promo badge.",
+    result: "Eye-catching promo post built to drive walk-ins and online orders.",
+    tags: ["Canva", "Promo", "F&B"],
+  },
 ];
 
 function Portfolio() {
@@ -396,17 +421,25 @@ function Row({ icon: Icon, label, text }: { icon: typeof Target; label: string; 
 }
 
 function Samples() {
+  const [active, setActive] = useState<number | null>(null);
+  const current = active !== null ? SAMPLES[active] : null;
+
   return (
     <section id="samples" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <SectionHead
           kicker="05 — Work Samples"
           title="A glimpse of recent visuals."
-          sub="Posters, social posts, content briefs and pitch materials I've designed and shipped."
+          sub="Click any post to see the full project."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {SAMPLES.map((s) => (
-            <div key={s.title} className="group relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-muted">
+          {SAMPLES.map((s, i) => (
+            <button
+              type="button"
+              key={s.title}
+              onClick={() => setActive(i)}
+              className="group relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-muted text-left focus:outline-none focus:ring-2 focus:ring-accent-green"
+            >
               <img src={s.image} alt={s.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="absolute inset-0 flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity">
@@ -416,10 +449,48 @@ function Samples() {
               <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <ArrowUpRight className="w-4 h-4 text-white" />
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>
+
+      {current && (
+        <div
+          className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 animate-fade-up"
+          onClick={() => setActive(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full grid md:grid-cols-[1.2fr_1fr] gap-6 bg-background rounded-3xl overflow-hidden border border-border shadow-elegant max-h-[90vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setActive(null)}
+              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-background/80 backdrop-blur border border-border flex items-center justify-center hover:bg-muted"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4" />
+            </button>
+            <div className="bg-muted flex items-center justify-center max-h-[50vh] md:max-h-[90vh] overflow-hidden">
+              <img src={current.image} alt={current.title} className="w-full h-full object-contain" />
+            </div>
+            <div className="p-6 md:p-8 overflow-y-auto">
+              <div className="text-xs font-mono uppercase tracking-[0.2em] text-accent-green mb-3">{current.type}</div>
+              <h3 className="text-2xl font-display font-bold mb-4">{current.title}</h3>
+              <div className="space-y-3 text-sm">
+                <Row icon={Target} label="Goal" text={current.goal} />
+                <Row icon={Users} label="What I did" text={current.did} />
+                <Row icon={Trophy} label="Result" text={current.result} />
+              </div>
+              <div className="flex flex-wrap gap-1.5 mt-5 pt-5 border-t border-border">
+                {current.tags.map((t) => (
+                  <span key={t} className="text-xs px-2.5 py-1 rounded-md bg-muted text-muted-foreground">{t}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
